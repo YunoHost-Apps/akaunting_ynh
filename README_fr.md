@@ -16,8 +16,7 @@ Il NE doit PAS être modifié à la main.
 
 ## Vue d’ensemble
 
-Ceci est une fausse description des fonctionalités de l'app
-
+Logiciel de comptabilité en ligne conçu pour les petites entreprises et les indépendants. Akaunting est construit avec des technologies modernes telles que Laravel, VueJS, Tailwind, RESTful API, etc.
 
 **Version incluse :** 3.1.11~ynh1
 
