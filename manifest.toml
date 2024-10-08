@@ -63,11 +63,12 @@ ram.runtime = "50M"
     sha256 = "7994d4c4d59f7ac1fdd90497133786795a4f2cd78104f5dd08c34e7b3fc85e67"
     in_subdir = false
 
-    # autoupdate.strategy = "latest_github_tag"
+    autoupdate.strategy = "latest_github_tag"
 
     [resources.system_user]
 
     [resources.install_dir]
+    group = "www-data:r-x"
 
     [resources.permissions]
     main.url = "/"
@@ -77,4 +78,3 @@ ram.runtime = "50M"
 
     [resources.database]
     type = "postgresql"
-    
