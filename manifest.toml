@@ -1,0 +1,79 @@
+#:schema https://raw.githubusercontent.com/YunoHost/apps/master/schemas/manifest.v2.schema.json
+
+packaging_format = 2
+
+id = "akaunting"
+name = "Akaunting"
+description.en = "Explain in *a few (10~15) words* the purpose of the app or what it actually does (it is meant to give a rough idea to users browsing a catalog of 100+ apps)"
+description.fr = "Expliquez en *quelques* (10~15) mots l'utilité de l'app ou ce qu'elle fait (l'objectif est de donner une idée grossière pour des utilisateurs qui naviguent dans un catalogue de 100+ apps)"
+
+version = "3.1.11~ynh1"
+
+maintainers = ["eric_G"]
+
+[upstream]
+license = "free"
+website = "https://akaunting.com/"
+admindoc = "https://akaunting.com/support"
+code = "https://github.com/akaunting/akaunting"
+
+[integration]
+yunohost = ">= 11.2.30"
+helpers_version = "2.1"
+architectures = "all"
+multi_instance = true
+
+ldap = false
+
+sso = false
+
+disk = "50M"
+ram.build = "50M"
+ram.runtime = "50M"
+
+[install]
+    [install.domain]
+    type = "domain"
+
+    [install.init_main_permission]
+    type = "group"
+    default = "visitors"
+
+    [install.language]
+    ask.en = "Choose the application language"
+    ask.fr = "Choisissez la langue de l'application"
+    type = "select"
+    choices = ["fr-FR", "en-GB"]
+    default = "fr-FR"
+
+    [install.admin]
+    type = "user"
+
+    [install.password]
+    help.en = "Use the help field to add an information for the admin about this question."
+    help.fr = "Utilisez le champ aide pour ajouter une information à l'intention de l'administrateur à propos de cette question."
+    type = "password"
+
+[resources]
+
+    [resources.sources]
+
+    [resources.sources.main]
+    url = "https://github.com/akaunting/akaunting/releases/download/3.1.11/Akaunting_3.1.11-Stable.zip"
+    sha256 = "7994d4c4d59f7ac1fdd90497133786795a4f2cd78104f5dd08c34e7b3fc85e67"
+    in_subdir = false
+
+    # autoupdate.strategy = "latest_github_tag"
+
+    [resources.system_user]
+
+    [resources.install_dir]
+
+    [resources.permissions]
+    main.url = "/"
+
+    [resources.apt]
+    packages = "mariadb-server, php8.3-fpm, php8.3-pdo, php8.3-dom, php8.3-mbstring, php8.3-mysql, php8.3-zip, php8.3-fileinfo, php8.3-intl, php8.3-tokenizer"
+
+    [resources.database]
+    type = "mysql"
