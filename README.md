@@ -16,8 +16,7 @@ It shall NOT be edited by hand.
 
 ## Overview
 
-This is a dummy description of this app features
-
+Online accounting software designed for small businesses and freelancers. Akaunting is built with modern technologies such as Laravel, VueJS, Tailwind, RESTful API etc.
 
 **Shipped version:** 3.1.11~ynh1
 
